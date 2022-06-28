@@ -8,14 +8,15 @@ class ListOfWords:
         words_list[]: contain of words of 5 letters get of site 
                         https://www.thefreedictionary.com/5-letter-words.htm
     """
-
+    __words_list = None
+   
     def __init__(self):
         """Constructs a new instance of ListOfWords
 
         Args:
             self (Die): An instance of Die.
         """
-        self.words_list = ["about","above","abuse", "actor","acute","admit","adopt","adult",
+        self.__words_list = ["about","above","abuse", "actor","acute","admit","adopt","adult",
         "after","again","agent","agree","ahead","alarm","album","alert","alike","alive","allow",
         "alone","along","alter","among","anger","Angle","angry","apart","apple","apply","arena",
         "argue","arise","array","aside","asset","audio","audit","avoid","award","aware","badly",
@@ -64,18 +65,21 @@ class ListOfWords:
         self.points = 0
 
     def value_ramdom(self):
-        """Generates a new random value and calculates the points for the die.
+        """Generates a new random value and return que word get in the list on position of random value
         
         Args:
-            self (Die): An instance of Die.
+            self (ListOfWords): An instance of ListOfWords.
+
+        Returns:
+            word_random: is the word randomly obtained from the list of words
         """
-        number = len(self.words_list)
+        number = len(self.__words_list)
 
         value = random.randint(1,number)
-        list_words = self.words_list
+        list_words = self.__words_list
         word_random = list_words[value]
         return word_random
 
 
 
-        #print(f" el Valor aleatorio {value} word {word_random}")
+        
